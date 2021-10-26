@@ -1,12 +1,10 @@
 {
   "ExpandedNodes": [
     "",
-    "\\backend",
-    "\\frontend",
     "\\frontend\\src",
     "\\frontend\\src\\components",
     "\\frontend\\src\\screens"
   ],
-  "SelectedNode": "\\frontend\\src\\screens\\HomeScreen.js",
+  "SelectedNode": "\\.gitignore",
   "PreviewInSolutionExplorer": false
 }

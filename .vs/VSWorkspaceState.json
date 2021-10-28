@@ -1,10 +1,15 @@
 {
   "ExpandedNodes": [
     "",
+    "\\backend",
+    "\\frontend",
     "\\frontend\\src",
+    "\\frontend\\src\\actions",
     "\\frontend\\src\\components",
+    "\\frontend\\src\\constants",
+    "\\frontend\\src\\reducers",
     "\\frontend\\src\\screens"
   ],
-  "SelectedNode": "\\.gitignore",
+  "SelectedNode": "\\frontend\\src\\constants\\productConstants.js",
   "PreviewInSolutionExplorer": false
 }

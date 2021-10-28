@@ -5,6 +5,18 @@ import express from 'express';
 import data from './data.js';
 
 const app = express();
+
+app.get('/api/products/:id', (req, res) => {
+    const product = data.products.find((x) => x._id === req.params.id);
+    if (product) {
+      res.send(product);
+    } else {
+      res.status(404).send({ message: 'Product Not Found' });
+    }
+  });
+
+
+
 //here we define the first route - this route of backend wil respond server is ready
 
 //here we create a handler req, res and inside the body of handler we send back a msg 

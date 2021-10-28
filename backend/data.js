@@ -5,7 +5,8 @@ const data = {
             name: 'Sensodyne toothpaste',
             image: '/images1/p1.jpg',
             price: 120,
-            countInStock: 10,
+            countInStock: 0,
+            description: 'high quality product',
 
         },
 
@@ -15,6 +16,7 @@ const data = {
             image: '/images1/p2.jpg',
             price: 100,
             countInStock: 20,
+            description: 'high quality product',
 
         },
 
@@ -25,6 +27,7 @@ const data = {
             image: '/images1/p3.jpg',
             price: 90,
             countInStock: 30,
+            description: 'high quality product',
 
 
         },
@@ -35,6 +38,7 @@ const data = {
             image: '/images1/p4.png',
             price: 220,
             countInStock: 30,
+            description: 'high quality product',
         },
 
         {
@@ -44,6 +48,7 @@ const data = {
             image: '/images1/p5.jpg',
             price: 120,
             countInStock: 30,
+            description: 'high quality product',
 
         },
            

@@ -1,14 +1,16 @@
-import { applyMiddleware, createStore, compose } from 'redux';
+import { applyMiddleware, createStore, compose, combineReducers } from 'redux';
 import thunk from 'redux-thunk';
-import data from './data';
+import { productDetailsReducer, productListReducer } from './reducers/productReducers';
 
 const initialState = {};
 //this redux store does nothing, it simply returns products from data.js in frontend
-const reducer = (state, action) => {
+const reducer = combineReducers({
+    productList: productListReducer,
+    productDetails: productDetailsReducer,
+});
 
-    return { products: (data.products) };
 
-};
+
 //if windows.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ does not exist use default compose that you are importing.
 //allows us to see redux store in inspect window
 //const composeEnhancer = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;

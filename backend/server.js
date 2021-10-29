@@ -1,44 +1,40 @@
-
 import express from 'express';
-
-//in server side prog we append .js at the end
-import data from './data.js';
+import mongoose from 'mongoose';
+import productRouter from './routers/productRouter.js';
+import userRouter from './routers/userRouter.js';
 
 const app = express();
+mongoose.connect(process.env.MONGODB_URL || 'mongodb://localhost/amazona', {
+  
+});
 
-app.get('/api/products/:id', (req, res) => {
-    const product = data.products.find((x) => x._id === req.params.id);
-    if (product) {
-      res.send(product);
-    } else {
-      res.status(404).send({ message: 'Product Not Found' });
-    }
-  });
+// app.get('/api/products/:id', (req, res) => {
+//   const product = data.products.find((x) => x._id === req.params.id);
+//   if (product) {
+//     res.send(product);
+//   } else {
+//     res.status(404).send({ message: 'Product Not Found' });
+//   }
+// });
 
 
+// app.get('/api/products', (req, res) => {
+//   res.send(data.products);
+// });
 
-//here we define the first route - this route of backend wil respond server is ready
+app.use('/api/users', userRouter);
 
-//here we create a handler req, res and inside the body of handler we send back a msg 
+app.use('/api/products', productRouter);
+
 app.get('/', (req, res) => {
-
-    res.send('server is ready');
-
+  res.send('Server is ready');
 });
 
-app.get('/api/products', (req, res) => {
-
-    res.send(data.products);
+app.use((err, req, res, next) => {
+  res.status(500).send({ message: err.message });
 });
 
-//to make our server running we call listen method of app, here we need to define a default port after listening to this port
-//it should call the body of this func and print console.
-//so when we click on this link it will print server is ready
 const port = process.env.PORT || 5000;
-//if env port does not exist use 5000
-app.listen(5000, () => {
-
-    console.log(`serve at http://localhost:${port}`);
+app.listen(port, () => {
+  console.log(`Serve at http://localhost:${port}`);
 });
-
- 

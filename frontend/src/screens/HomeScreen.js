@@ -15,12 +15,16 @@ export default function HomeScreen() {
     //to get product from redux store we use useselector
     //use selector takes redux state as parameter and from this parameter we just need to get product list
     const productList = useSelector((state) => state.productList);
-    
+  
     const { loading, error, products } = productList;
+    
+    console.log(products);
+
+
     useEffect(() => {
         dispatch(listProducts());
         
-    }, []);
+    }, [dispatch]);
 
 
     //here using products we fetch wach products.
@@ -30,7 +34,6 @@ export default function HomeScreen() {
     //we deifine loading box component and messagebox component in another screen.
     return (
         <div>
-
             {loading ?
                 (<LoadingBox></LoadingBox>
                 ) : error ? (
@@ -42,8 +45,9 @@ export default function HomeScreen() {
                     ) : (                      
 
                         <div className="row center">
-
+                            
                             {products.map((product) => (
+                                
                                 <Product key={product._id} product={product}></Product>
                             ))}
                         </div>

@@ -1,7 +1,25 @@
+import bcrypt from 'bcryptjs';
+
 const data = {
+
+    users: [
+        {
+          name: 'Basir',
+          email: 'admin@example.com',
+          password: bcrypt.hashSync('1234', 8),
+          isAdmin: true,
+        },
+        {
+          name: 'John',
+          email: 'user@example.com',
+          password: bcrypt.hashSync('1234', 8),
+          isAdmin: false,
+        },
+      ],
+
     products: [
         {
-            _id: '1',
+           
             name: 'Sensodyne toothpaste',
             image: '/images1/p1.jpg',
             price: 120,
@@ -11,7 +29,7 @@ const data = {
         },
 
         {
-            _id: '2',
+            
             name: 'Colgate Triple Action',
             image: '/images1/p2.jpg',
             price: 100,
@@ -22,7 +40,7 @@ const data = {
 
         {
 
-            _id: '3',
+            
             name: 'EMOFORM-F',
             image: '/images1/p3.jpg',
             price: 90,
@@ -33,7 +51,7 @@ const data = {
         },
 
         {
-            _id: '4',
+            
             name: 'Oral-B',
             image: '/images1/p4.png',
             price: 220,
@@ -43,7 +61,7 @@ const data = {
 
         {
 
-            _id: '5',
+           
             name: 'Crest Pro-Health',
             image: '/images1/p5.jpg',
             price: 120,
